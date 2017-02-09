@@ -1,5 +1,5 @@
 from nose.tools import *
-import df_core
+import dfm_core
 
 def setup():
     print "SETUP!"

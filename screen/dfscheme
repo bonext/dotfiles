@@ -1,0 +1,9 @@
+{
+    "name": "screen",
+    "schemes": [
+        {
+            "file":"screenrc",
+            "dest":"~/.screenrc"
+        }
+    ]
+}
