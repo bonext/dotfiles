@@ -1,0 +1,9 @@
+{
+    "name": "theano",
+    "schemes": [
+        {
+            "file":"theanorc",
+            "dest":"None"
+        }
+    ]
+}

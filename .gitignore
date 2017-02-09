@@ -2,3 +2,9 @@
 
 # Python
 *.pyc
+
+# idea
+.idea/
+
+# OSX
+*.DS_Store
