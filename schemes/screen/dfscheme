@@ -1,9 +1,15 @@
 {
     "name": "screen",
-    "schemes": [
+    "configurations": [
         {
-            "file":"screenrc",
-            "dest":"~/.screenrc"
+            "name": "default",
+            "scheme": [
+                {
+                    "file":"screenrc",
+                    "dest":"~/.screenrc"
+                }
+            ]
         }
-    ]
+    ],
+    "default": "default"
 }

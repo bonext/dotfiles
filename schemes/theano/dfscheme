@@ -1,9 +1,25 @@
 {
     "name": "theano",
-    "schemes": [
+    "configurations":
+    [
         {
-            "file":"theanorc",
-            "dest":"None"
+            "name": "cpu",
+            "scheme": [
+                {
+                    "file":"theanorc_cpu",
+                    "dest":"~/.theanorc"
+                }
+            ]
+        },
+        {
+            "name": "gpu",
+            "scheme": [
+                {
+                    "file":"theanorc_gpu",
+                    "dest":"~/.theanorc"
+                }
+            ]
         }
-    ]
+    ],
+    "default": "cpu"
 }
