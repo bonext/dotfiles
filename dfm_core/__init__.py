@@ -51,9 +51,9 @@ Commands:
 
         print 'List of available schemes'
         print '-------------------------'
-        for scheme in self.schemes:
-            print scheme["name"], '\t\t\t', scheme['root']
-            for config in scheme['configurations']:
+        for scheme_name in self.schemes:
+            print scheme_name, '\t\t\t', self.schemes[scheme_name]['root']
+            for config in self.schemes[scheme_name]['configurations']:
                     print ' * ', config['name']
 
     def setup(self):
@@ -85,5 +85,9 @@ Commands:
             exit(1)
 
 
-    def sync(self):
-        pass
+    def up(self):
+        parser = argparse.ArgumentParser(
+            description=''
+        )
+        parser.add_argument('name', help='Config to update', type=str, nargs='+')
+        args = parser.parse_args(sys.argv[2:])
