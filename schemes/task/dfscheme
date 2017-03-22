@@ -1,0 +1,16 @@
+{
+    "name": "task",
+    "configurations":
+    [
+        {
+            "name": "default",
+            "scheme": [
+                {
+                    "file":"taskrc_default",
+                    "dest":"~/.taskrc"
+                }
+            ]
+        }
+    ],
+    "default": "default"
+}
