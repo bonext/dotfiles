@@ -1,2 +1,21 @@
 escape ^A^A
 bind o other
+
+autodetach on
+startup_message off
+defscrollback 30000
+#caption always "%{kB}%?%-Lw%?%{bw}%n*%f %t%?(%u)%?%{kB}%?%+Lw%?"
+#hardstatus alwayslastline "%{BW}%16=%l %{BW}%50=%d/%m/%Y %{BW}%80=%c%=i"
+caption always "%{= bb}%{+b w}%n %h %=%t %c"
+hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%<"
+
+vbell on
+vbell_msg "bell on %t (%n)"
+bell_msg "Bell %n"
+
+crlf off
+
+altscreen on
+
+activity "Activity in %t(%n)"
+shelltitle "shell"
