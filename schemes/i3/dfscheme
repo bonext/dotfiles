@@ -1,0 +1,15 @@
+{
+    "name": "i3",
+    "configurations": [
+        {
+            "name": "default",
+            "scheme": [
+                {
+                    "file":"config",
+                    "dest":"~/.config/i3/config"
+                }
+            ]
+        }
+    ],
+    "default": "default"
+}
