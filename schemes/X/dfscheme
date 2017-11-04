@@ -1,0 +1,19 @@
+{
+    "name": "X",
+    "configurations": [
+        {
+            "name": "default",
+            "scheme": [
+                {
+                    "file":"xinitrc",
+                    "dest":"~/.xinitrc"
+                },
+                {
+                    "file":"Xmodmap",
+                    "dest":"~/.Xmodmap"
+                }
+            ]
+        }
+    ],
+    "default": "default"
+}
