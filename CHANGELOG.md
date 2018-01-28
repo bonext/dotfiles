@@ -5,3 +5,4 @@
 - Added CHANGELOG
 - Added default i3 + i3config
 - Added default bash with drop to console if exit X
+- Updated README
