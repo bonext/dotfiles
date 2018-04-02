@@ -11,6 +11,10 @@
                 {
                     "file":"Xmodmap",
                     "dest":"~/.Xmodmap"
+                },
+                {
+                    "file":"Xresources",
+                    "dest":"~/.Xresources"
                 }
             ]
         }
