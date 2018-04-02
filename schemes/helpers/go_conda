@@ -1,0 +1,6 @@
+# run as follows:
+# user@host$ source go_conda
+# or
+# user@host$ . go_conda
+export PATH=~/miniconda3/bin:$PATH
+export PS1="conda::$PS1"

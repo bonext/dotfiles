@@ -1,6 +1,11 @@
 # CHANGELOG
 ## Plans
 ## News
+### 2018-04-02 v.0.1.3
+- Added `.Xresources`
+- Modified `.xinitrc`
+- Added `go_conda`
+
 ### 2018-03-10 v.0.1.2
 - Added volume control bindings to i3
 - Added volume to i3bar

@@ -7,6 +7,10 @@
                 {
                     "file":"fix_ssh",
                     "dest":"~/fix_ssh"
+                },
+                {
+                    "file":"go_conda",
+                    "dest":"~/go_conda"
                 }
             ]
         }
