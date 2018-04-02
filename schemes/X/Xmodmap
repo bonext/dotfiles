@@ -1,4 +1,4 @@
-pointer = 1 2 3 5 4 7 6 8 9 10 11 12
+pointer = 1 2 3 4 5 7 6 8 9 10 11 12
 keycode   8 =
 keycode   9 = Escape NoSymbol Escape
 keycode  10 = 1 exclam 1 exclam
