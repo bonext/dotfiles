@@ -155,6 +155,10 @@ bar {
         status_command i3status
 }
 
+# screen lock TBD
+# bindsym $mod+z exec i3lock -e -t -c 424242
+bindsym $mod+z exec xscreensaver-command -lock
+
 # backlight settings
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5

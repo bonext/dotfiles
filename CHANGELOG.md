@@ -1,6 +1,12 @@
 # CHANGELOG
 ## Plans
+- add xscreensaver config
+
 ## News
+### 2018-04-18 v.0.1.4
+- add $mod+z as screen lock
+- add Ctrl+Shift+{C,V} as xterm CLIPBOARD shortcuts
+
 ### 2018-04-02 v.0.1.3
 - Added `.Xresources`
 - Modified `.xinitrc`
