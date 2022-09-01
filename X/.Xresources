@@ -1,0 +1,22 @@
+#include "/home/bonext/src/3rdparty/solarized-xresources/Xresources.dark"
+
+XTerm*faceName: Source Code Pro
+XTerm*faceSize: 10
+XTerm*faceSize1: 6
+XTerm*faceSize2: 8
+XTerm*faceSize3: 10
+XTerm*faceSize4: 12
+XTerm*faceSize5: 14
+XTerm*VisualBell: true
+
+! hinting
+Xft.hinting: true
+Xft.autohint: false
+Xft.hintstyle: hintfull
+Xft.antialias: true
+Xft.rgba: rgb
+
+! Font DPI settings
+! I assume this is usually read when we're undocked
+! because this is the only sane way to switch the laptop on
+#include "/home/bonext/.local/etc/xresources-when-undocked"
