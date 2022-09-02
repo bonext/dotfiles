@@ -1,0 +1,16 @@
+#!/bin/sh -e
+
+# switch to the internal display
+xrandr --dpi 132 --output eDP-1 --auto --output DP-3 --off
+
+# fix font dpi
+xrdb -merge $HOME/.local/etc/xresources-when-undocked
+
+# reload dwm
+pkill -HUP dwm
+
+# restore background
+$HOME/.fehbg &
+
+# zzz when the lid has closed
+doas sysctl machdep.lidaction=1

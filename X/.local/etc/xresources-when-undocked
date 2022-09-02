@@ -1,0 +1,4 @@
+! eDP-1 native DPI: 131 or 132
+! 96 dpi on eDP-1 gives okay-ish
+! interface scale for apps
+Xft.dpi: 96
