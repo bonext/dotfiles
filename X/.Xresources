@@ -1,5 +1,6 @@
 #include "/home/bonext/src/3rdparty/solarized-xresources/Xresources.dark"
 
+! cf. https://wiki.archlinux.org/title/Xterm
 XTerm*faceName: Source Code Pro
 XTerm*faceSize: 10
 XTerm*faceSize1: 6
@@ -15,6 +16,12 @@ xterm.vt100.translations: #override \n\
     Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
     Ctrl Shift <Key>V: insert-selection(CLIPBOARD)
 
+! necessary for emacs -nw
+XTerm.vt100.metaSendsEscape: true
+XTerm.vt100.backarrowKey: false
+XTerm.ttyModes: erase ^?
+
+
 ! hinting
 Xft.hinting: true
 Xft.autohint: false
@@ -23,6 +30,6 @@ Xft.antialias: true
 Xft.rgba: rgb
 
 ! Font DPI settings
-! I assume this is usually read when we're undocked
+! I assume this is usually read when undocked
 ! because this is the only sane way to switch the laptop on
 #include "/home/bonext/.local/etc/xresources-when-undocked"
