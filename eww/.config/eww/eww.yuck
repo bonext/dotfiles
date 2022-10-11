@@ -1,0 +1,41 @@
+(defpoll date :interval "1s" "date '+%b %d, %Y'")
+(defpoll time :interval "1s" "date '+ %R'")
+
+; layout widget
+(defvar current_layout "en")
+(defwidget layout []
+	   (label :text current_layout))
+	   
+(defwindow statusbar
+	   :monitor 0 ; can't miss this one
+	   :exclusive true
+	   :stacking "overlay" ; this probably does not really matter
+	   :focusable false ; matters for keyboard inputs
+	   ; geometry
+	   ; I have to use pixels for height, because I reserve this space in hyprland
+	   :geometry (geometry :x "0"
+	   	     	       :y "0"
+			       :width "100%"
+			       :height "32")
+	   (statusbar))
+
+(defwidget datetime_widget []
+	   (box :orientation "horizontal"
+	   	:halign "end"
+		time
+		date))
+
+(defwidget launcher_btn []
+	   (button
+		:halign "start"
+		:onclick "rofi -show drun"
+		"MENU"))
+
+(defwidget statusbar []
+	   (box :orientation "horizontal"
+	   	:hexpand true
+		:width "100%"
+	   	:halign "fill"
+		(launcher_btn)
+		(layout)
+		(datetime_widget)))
