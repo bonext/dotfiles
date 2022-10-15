@@ -8,20 +8,6 @@
     padding-right: 1em;
 }
 
-.battery-symbol {
-    font-family: SauceCodePro;
-    font-size: 2em;
-    border-color: #000000;
-    border-width: 1px;
-    border-style: solid;
-}
-
-.layout-widget {
-    border-color: #000000;
-    border-width: 1px;
-    border-style: solid;
-}
-
 .leftside-container {
     border-color: #ff0000;
     border-width: 1px;
@@ -35,7 +21,29 @@
 }
 
 .rightside-container {
-    border-color: #ff0000;
-    border-width: 1px;
-    border-style: dashed;
+//    border-color: #ff0000;
+//    border-width: 1px;
+//    border-style: dashed;
 }
+
+.layout-widget {
+//    border-color: #000000;
+//    border-width: 1px;
+//    border-style: solid;
+}
+
+.battery-symbol {
+    font-family: SauceCodePro;
+    font-size: 2em;
+//    border-color: #000000;
+//    border-width: 1px;
+//    border-style: solid;
+}
+
+.datetime-widget {
+//    border-color: #000000;
+//    border-width: 1px;
+//    border-style: solid;    
+}
+
+

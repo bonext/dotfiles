@@ -29,7 +29,9 @@
         (button
         :onclick "hyprctl dispatch workspace 9"
         "9")))
-   
+
+                ; right side
+                
 ;; keyboard_layout widget
 (defvar current_layout "en")
 (defwidget keyboard_layout []
@@ -43,10 +45,14 @@
 (defpoll date :interval "1s" "date '+%b %d, %Y'")
 (defpoll time :interval "1s" "date '+ %R'")   
 (defwidget datetime_widget []
-   (box :orientation "horizontal"
-    :halign "end"
-    time
-    date))
+   (box :class "datetime-widget"
+        :orientation "horizontal"
+        :halign "end"
+        :valign "baseline"
+        :space-evenly false
+        :spacing 8
+        time
+        date))
 
 (defwidget _battery [battery status charge empty almost-empty about-half almost-full full]
    (label :class "battery-symbol"
@@ -69,6 +75,17 @@
              :almost-full ""
              :full ""))
 
+(defwidget rightside []
+   (box :class "rightside-container"
+        :orientation "horizontal"
+        :space-evenly false
+        :spacing 16
+        :halign "end"
+        :valign "baseline"
+        (keyboard_layout)
+        (battery)
+        (datetime_widget)))
+
 (defwidget leftside []
    (box :class "leftside-container"
         :orientation "horizontal"
@@ -80,14 +97,6 @@
         :orientation "horizontal"
         :hexpand true))
    
-(defwidget rightside []
-   (box :class "rightside-container"
-        :orientation "horizontal"
-        :halign "end"
-        :valign "baseline"
-        (keyboard_layout)
-        (battery)
-        (datetime_widget)))
 
 (defwidget statusbar []
    (box :class "statusbar-box"
