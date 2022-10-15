@@ -1,41 +1,114 @@
-(defpoll date :interval "1s" "date '+%b %d, %Y'")
-(defpoll time :interval "1s" "date '+ %R'")
-
-; layout widget
+; workspace switcher
+(defwidget workspaces []
+   (box :orientation "horizontal"
+        :spacing 10
+        (button
+        :onclick "hyprctl dispatch workspace 1"
+        "1")
+        (button
+        :onclick "hyprctl dispatch workspace 2"
+        "2")
+        (button
+        :onclick "hyprctl dispatch workspace 3"
+        "3")
+        (button
+        :onclick "hyprctl dispatch workspace 4"
+        "4")
+        (button
+        :onclick "hyprctl dispatch workspace 5"
+        "5")
+        (button
+        :onclick "hyprctl dispatch workspace 6"
+        "6")
+        (button
+        :onclick "hyprctl dispatch workspace 7"
+        "7")
+        (button
+        :onclick "hyprctl dispatch workspace 8"
+        "8")
+        (button
+        :onclick "hyprctl dispatch workspace 9"
+        "9")))
+   
+;; keyboard_layout widget
 (defvar current_layout "en")
-(defwidget layout []
-	   (label :text current_layout))
-	   
-(defwindow statusbar
-	   :monitor 0 ; can't miss this one
-	   :exclusive true
-	   :stacking "overlay" ; this probably does not really matter
-	   :focusable false ; matters for keyboard inputs
-	   ; geometry
-	   ; I have to use pixels for height, because I reserve this space in hyprland
-	   :geometry (geometry :x "0"
-	   	     	       :y "0"
-			       :width "100%"
-			       :height "32")
-	   (statusbar))
+(defwidget keyboard_layout []
+           (box :class "layout-widget"
+                :orientation "h"
+                :hexpand false
+                (label :halign "end"
+                       :text current_layout)))
 
+;; datetime widget
+(defpoll date :interval "1s" "date '+%b %d, %Y'")
+(defpoll time :interval "1s" "date '+ %R'")   
 (defwidget datetime_widget []
-	   (box :orientation "horizontal"
-	   	:halign "end"
-		time
-		date))
+   (box :orientation "horizontal"
+    :halign "end"
+    time
+    date))
 
-(defwidget launcher_btn []
-	   (button
-		:halign "start"
-		:onclick "rofi -show drun"
-		"MENU"))
+(defwidget _battery [battery status charge empty almost-empty about-half almost-full full]
+   (label :class "battery-symbol"
+          :halign "end"
+          :text {status == 'Charging' ? charge :
+                 battery < 10 ? empty :
+                 battery < 30 ? almost-empty :
+                 battery < 60 ? about-half :
+                 battery < 90 ? almost-full : full}))
+
+(defwidget battery []
+   (_battery :status {EWW_BATTERY.CMB1.status}
+             :battery {EWW_BATTERY.total_avg}
+             ;; beware: these symbols take up extra space
+             ;; so right " is lost
+             :charge "ﮣ"
+             :empty ""
+             :almost-empty ""
+             :about-half ""
+             :almost-full ""
+             :full ""))
+
+(defwidget leftside []
+   (box :class "leftside-container"
+        :orientation "horizontal"
+        :halign "start"
+        (workspaces)))
+
+(defwidget center []
+   (box :class "center-container"
+        :orientation "horizontal"
+        :hexpand true))
+   
+(defwidget rightside []
+   (box :class "rightside-container"
+        :orientation "horizontal"
+        :halign "end"
+        :valign "baseline"
+        (keyboard_layout)
+        (battery)
+        (datetime_widget)))
 
 (defwidget statusbar []
-	   (box :orientation "horizontal"
-	   	:hexpand true
-		:width "100%"
-	   	:halign "fill"
-		(launcher_btn)
-		(layout)
-		(datetime_widget)))
+   (box :class "statusbar-box"
+        :orientation "horizontal"
+        :hexpand false
+        :width "100%"
+        :halign "fill"
+        :valign "baseline"
+        (leftside)
+        (center)
+        (rightside)))
+
+(defwindow statusbar
+   :monitor 0 ; can't miss this one
+   :exclusive true
+   :stacking "overlay" ; this probably does not really matter
+   :focusable false ; matters for keyboard inputs
+   ; geometry
+   ; I have to use pixels for height, because I reserve this space in hyprland
+   :geometry (geometry :x "0"
+               :y "0"
+              :width "100%"
+              :height "32")
+   (statusbar))
