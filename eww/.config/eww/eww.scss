@@ -1,3 +1,41 @@
 * {
   all: unset; //Unsets everything so you can style everything from scratch
 }
+
+.statusbar-box {
+    background-color: #5a5a5a;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.battery-symbol {
+    font-family: SauceCodePro;
+    font-size: 2em;
+    border-color: #000000;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.layout-widget {
+    border-color: #000000;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.leftside-container {
+    border-color: #ff0000;
+    border-width: 1px;
+    border-style: dashed;
+}
+
+.center-container {
+    border-color: #ff0000;
+    border-width: 1px;
+    border-style: dashed;
+}
+
+.rightside-container {
+    border-color: #ff0000;
+    border-width: 1px;
+    border-style: dashed;
+}
