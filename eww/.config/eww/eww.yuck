@@ -16,10 +16,10 @@
         "")
         (button
         :onclick "hyprctl dispatch workspace 2"
-        "")
+        "")
         (button
         :onclick "hyprctl dispatch workspace 3"
-        "")
+        "")
         (button
         :onclick "hyprctl dispatch workspace 4"
         "-")
