@@ -39,7 +39,7 @@
         :onclick "hyprctl dispatch workspace 9"
         "")
         (button
-        :onclick "hyprctl dispatch workspace 0"
+        :onclick "hyprctl dispatch workspace 10"
         "")))
         
 
