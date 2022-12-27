@@ -1,3 +1,4 @@
 # TRBL margin value to get around top bar
 # outer-margin applies to all notifications
 outer-margin=42,0,0,0
+default-timeout=1000
