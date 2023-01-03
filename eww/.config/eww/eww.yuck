@@ -61,6 +61,7 @@
         :spacing 16
         :halign "end"
         :valign "baseline"
+        (network)
         (keyboard_layout)
         (battery)
         (datetime_widget)))
@@ -110,6 +111,40 @@
         time
         date))
 
+;; TODO: wireless widget
+;; offline + signal strength
+(defpoll netinfo-json :interval "30s"
+         `nmcli -t -f SSID,SIGNAL,ACTIVE --color no device wifi \
+         | grep -e '.*:yes$' \
+         | sed --regexp-extended -e 's/(.*):([0-9]+):yes$/{"ssid": "\\1", "signal": "\\2"}/'`)
+(defwidget _network [strength offline excellent
+                    good okay slow]
+  (box :class "network-icon"
+       :space-evenly false
+       :spacing 8
+    (label :text {strength == "" ? offline :
+      strength < 26 ? slow :
+        strength < 51 ? okay :
+          strength < 76 ? good : excellent})))
+(defwidget network []
+  (box :class "network-widget"
+        :orientation "horizontal"
+        :halign "end"
+        :valign "baseline"
+        :space-evenly false
+        :spacing 8
+         (label :halign "end"
+                 :text {netinfo-json.ssid})
+        (_network
+                :strength {netinfo-json.signal}
+                :offline "ﲁ"
+                :excellent ""
+                :good ""
+                :okay ""
+                :slow "")))
+
+;; TODO: dropbox widget
+;; not running / syncing / in sync
 
                 ; status bar general
                 
