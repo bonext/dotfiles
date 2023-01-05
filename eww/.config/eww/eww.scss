@@ -37,7 +37,12 @@
 //    border-style: solid;
 }
 
-.battery-widget {
+.layout-title {
+    font-family: IBM Plex Sans;
+    font-size: 1.2em;
+}
+
+.battery-icon {
     font-family: SauceCodePro;
     font-size: 2em;
 //    border-color: #000000;
@@ -46,6 +51,8 @@
 }
 
 .datetime-widget {
+    font-family: IBM Plex Sans;
+    font-size: 1em;
 //    border-color: #000000;
 //    border-width: 1px;
 //    border-style: solid;    
@@ -57,4 +64,9 @@
 //    border-color: #000000;
 //    border-width: 1px;
 //    border-style: solid;
+}
+
+.network-name {
+    font-family: IBM Plex Sans;
+    font-size: 1em;
 }
