@@ -22,10 +22,10 @@
         "")
         (button
         :onclick "hyprctl dispatch workspace 4"
-        "-")
+        "")
         (button
         :onclick "hyprctl dispatch workspace 5"
-        "-")
+        "")
         (button
         :onclick "hyprctl dispatch workspace 6"
         "-")
@@ -72,13 +72,16 @@
            (box :class "layout-widget"
                 :orientation "h"
                 :hexpand false
-                (label :halign "end"
-                       :text current_layout)))
+                :valign "baseline"
+                 (label :class "layout-title"
+                         :halign "end"
+                         :valign "baseline"
+                          :text current_layout)))
 
 ;; battery widget
 ;; TODO: refactor ugly separation
 (defwidget _battery [battery status charge empty almost-empty about-half almost-full full]
-   (label :class "battery-widget"
+   (label :class "battery-icon"
           :halign "end"
           :text {status == 'Charging' ? charge :
                  battery < 10 ? empty :
@@ -133,8 +136,12 @@
         :valign "baseline"
         :space-evenly false
         :spacing 8
-         (label :halign "end"
-                 :text {netinfo-json.ssid})
+        (label :class "network-icon"
+               :halign "end"
+               :text "")
+        (label :class "network-name"
+                :halign "end"
+                :text " ${netinfo-json.ssid}")
         (_network
                 :strength {netinfo-json.signal}
                 :offline "ﲁ"
