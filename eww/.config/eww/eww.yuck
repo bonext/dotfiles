@@ -16,16 +16,16 @@
         "")
         (button
         :onclick "hyprctl dispatch workspace 2"
-        "")
-        (button
-        :onclick "hyprctl dispatch workspace 3"
         "")
         (button
+        :onclick "hyprctl dispatch workspace 3"
+        "")
+        (button
         :onclick "hyprctl dispatch workspace 4"
-        "")
+        "-")
         (button
         :onclick "hyprctl dispatch workspace 5"
-        "")
+        "-")
         (button
         :onclick "hyprctl dispatch workspace 6"
         "-")
@@ -61,7 +61,8 @@
         :spacing 16
         :halign "end"
         :valign "baseline"
-        (network)
+         (dropbox)
+         (network)
         (keyboard_layout)
         (battery)
         (datetime_widget)))
@@ -93,7 +94,7 @@
    (_battery :status {EWW_BATTERY.CMB1.status}
              :battery {EWW_BATTERY.total_avg}
              ;; beware: these symbols take up extra space
-             ;; so right " is not visible (but present)
+             ;; so right quote is not visible (but present)
              :charge "ﮣ"
              :empty ""
              :almost-empty ""
@@ -114,7 +115,7 @@
         time
         date))
 
-;; TODO: wireless widget
+;; Wireless widget
 ;; offline + signal strength
 (defpoll netinfo-json :interval "30s"
          `nmcli -t -f SSID,SIGNAL,ACTIVE --color no device wifi \
@@ -150,11 +151,38 @@
                 :okay ""
                 :slow "")))
 
-;; TODO: dropbox widget
-;; not running / syncing / in sync
+;; Dropbox widget
+;; dropbox-cli status: "Connecting...", "Syncing...", "Up to date"
+;; rest are considered broken
+(defpoll dropbox-status :interval "10s" `dropbox-cli status`)
+(defwidget _dropbox [status broken connecting syncing ok]
+  (box :class "dropbox-icon"
+        :space-evenly false
+         :spacing 8
+          (label :text {status == "Up to date" ? ok :
+                               status == "Syncing..." ? syncing :
+                               status == "Connecting..." ? connecting :
+                               broken})))
+
+(defwidget dropbox []
+  (box :class "dropbox-widget"
+        :orientation "horizontal"
+         :halign "end"
+          :valign "baseline"
+           :space-evenly false
+            :spacing 8
+             (label :class "dropbox-icon"
+                     :halign "end"
+                      :text "")
+             (_dropbox
+              :status dropbox-status
+              :broken ""
+              :connecting "裏"
+              :syncing "痢"
+              :ok "")))
+
 
                 ; status bar general
-                
 (defwidget statusbar []
    (box :class "statusbar-box"
         :orientation "horizontal"
