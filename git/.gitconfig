@@ -1,3 +1,5 @@
 [user]
 	name = Alexander Molchanov
 	email = bonext@mailbox.org
+[init]
+	defaultBranch = main
