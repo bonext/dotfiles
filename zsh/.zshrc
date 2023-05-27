@@ -1,3 +1,4 @@
+# Interactive shell setup
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=10000
@@ -21,4 +22,8 @@ PROMPT='%~%# '
 if [[ "$(ps -ocommand= $PPID)" == "vifm" ]]
 then
         export PROMPT="[vifm] $PROMPT"
+fi
+
+if [[ -f ~/.alias ]]; then
+    source ~/.alias
 fi
