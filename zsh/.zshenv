@@ -1,5 +1,5 @@
 typeset -U path PATH
-path=(~/.local/bin $path)
+path=(~/.local/bin/platform-tools ~/.local/bin $path)
 export PATH
 . "$HOME/.cargo/env"
 
