@@ -1,7 +1,10 @@
+;; set default encoding to utf-8
+;; via https://lispcookbook.github.io/cl-cookbook/getting-started.html#more-settings
+(setf sb-impl::*default-external-format* :utf-8)
 
 ;;; The following lines added by ql:add-to-init-file:
 #-quicklisp
-(let ((quicklisp-init (merge-pathnames "quicklisp/setup.lisp"
+(let ((quicklisp-init (merge-pathnames "src/quicklisp/setup.lisp"
                                        (user-homedir-pathname))))
   (when (probe-file quicklisp-init)
     (load quicklisp-init)))
