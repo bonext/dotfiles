@@ -1,7 +1,18 @@
+# Generic shell setup
 typeset -U path PATH
-path=(~/.local/bin/platform-tools ~/.local/bin $path)
+
+if [[ -d ~/.local/bin ]]; then
+    path=(~/.local/bin $path)
+fi
+
+if [[ -d ~/.local/bin/platform-tools ]]; then
+    path=(~/.local/bin/platform-tools $path)
+fi
 export PATH
-. "$HOME/.cargo/env"
+
+if [[ -f ~/.cargo/env ]]; then
+    source ~/.cargo/env
+fi
 
 # Note: -c waits for termination (-n does not)
 export VISUAL="emacsclient -c"
