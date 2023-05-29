@@ -1,9 +1,0 @@
-[Unit]
-Description=Dropbox
-
-[Service]
-Type=simple
-ExecStart=/home/bonext/.dropbox-dist/dropboxd
-
-[Install]
-WantedBy=default.target
