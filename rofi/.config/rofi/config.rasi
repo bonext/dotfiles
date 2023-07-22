@@ -1,0 +1,4 @@
+configuration {
+    font: "IBM Plex Mono 14";
+}
+@theme "/usr/share/rofi/themes/solarized_alternate.rasi"
