@@ -1,0 +1,6 @@
+#!/usr/bin/env zsh
+setxkbmap -layout us,ru -option grp:win_space_toggle
+guake &
+nm-applet &
+dropbox &
+xfce4-power-manager --daemon
