@@ -283,9 +283,9 @@ globalkeys = gears.table.join(
         function () awful.tag.incnmaster( 1, nil, true) end,
         {description = "increase the number of master clients", group = "layout"}),
 
-    -- mod + d: decrease master cap
+    -- mod + Shift + i: decrease master cap
     awful.key(
-        {modkey}, "d",
+        {modkey, "Shift"}, "i",
         function () awful.tag.incnmaster(-1, nil, true) end,
         {description = "decrease the number of master clients", group = "layout"}),
 
