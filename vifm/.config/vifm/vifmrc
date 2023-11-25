@@ -11,7 +11,7 @@
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
 if executable('emacsclient')
-    set vicmd=emacsclient\ -c
+    set vicmd='#editor#run emacsclient'
 elseif executable('nvim')
     set vicmd=nvim
 elseif executable('vim')
