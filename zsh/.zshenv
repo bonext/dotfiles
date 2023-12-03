@@ -18,3 +18,5 @@ fi
 export VISUAL="emacsclient -c"
 # edit everything with emacs using sudo -e or sudoedit
 export SUDO_EDITOR="emacsclient -c"
+
+export GPG_TTY=$(tty)
