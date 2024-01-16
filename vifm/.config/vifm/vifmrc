@@ -10,8 +10,8 @@
 " Command used to edit files in various contexts.  The default is vim.
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
-if executable('emacsclient')
-    set vicmd='#editor#run emacsclient'
+if executable('emacs')
+    set vicmd='#editor#run emacs'
 elseif executable('nvim')
     set vicmd=nvim
 elseif executable('vim')
