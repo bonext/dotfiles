@@ -19,11 +19,9 @@ if [[ -f $CARGO_ENV ]]; then
     source $CARGO_ENV
 fi
 
-# Note: -c waits for termination (-n does not)
-export VISUAL="emacs -c"
+export VISUAL="emacsclient -c"
 
-# edit everything with emacs using sudo -e or sudoedit
-export SUDO_EDITOR="emacs -c"
+export SUDO_EDITOR="emacsclient -c"
 
 export GPG_TTY=$(tty)
 
