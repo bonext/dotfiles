@@ -87,7 +87,7 @@ input {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 16
+    gaps 4
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -132,7 +132,7 @@ layout {
         // off
 
         // How many logical pixels the ring extends out from the windows.
-        width 4
+        width 2
 
         // Colors can be set in a variety of ways:
         // - CSS named colors: "red"
@@ -140,7 +140,7 @@ layout {
         // - CSS-like notation: "rgb(255, 127, 0)", rgba(), hsl() and a few others.
 
         // Color of the ring on the active monitor.
-        active-color "#7fc8ff"
+        active-color "#ff5555"
 
         // Color of the ring on inactive monitors.
         inactive-color "#505050"
@@ -220,6 +220,21 @@ animations {
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
+//
+window-rule {
+    geometry-corner-radius 8 8 0 0
+}
+
+window-rule {
+   match app-id="kitty"
+   // obey corner radius
+   clip-to-geometry true
+}
+
+window-rule {
+    match app-id="org.keepassxc.KeePassXC"
+    clip-to-geometry true
+}
 
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
@@ -404,21 +419,21 @@ binds {
     Mod+7 { focus-workspace 7; }
     Mod+8 { focus-workspace 8; }
     Mod+9 { focus-workspace 9; }
-    Mod+Ctrl+1 { move-column-to-workspace 1; }
-    Mod+Ctrl+2 { move-column-to-workspace 2; }
-    Mod+Ctrl+3 { move-column-to-workspace 3; }
-    Mod+Ctrl+4 { move-column-to-workspace 4; }
-    Mod+Ctrl+5 { move-column-to-workspace 5; }
-    Mod+Ctrl+6 { move-column-to-workspace 6; }
-    Mod+Ctrl+7 { move-column-to-workspace 7; }
-    Mod+Ctrl+8 { move-column-to-workspace 8; }
-    Mod+Ctrl+9 { move-column-to-workspace 9; }
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
 
     // Alternatively, there are commands to move just a single window:
     // Mod+Ctrl+1 { move-window-to-workspace 1; }
 
     // Switches focus between the current and the previous workspace.
-    // Mod+Tab { focus-workspace-previous; }
+    Mod+Tab { focus-workspace-previous; }
 
     Mod+Comma  { consume-window-into-column; }
     Mod+Period { expel-window-from-column; }
