@@ -30,8 +30,8 @@ autoload -U colors
 setopt autocd beep
 unsetopt extendedglob notify
 
-# use emacs bindings
-bindkey -e
+# use vim bindings
+bindkey -v
 # Make Vi mode transitions faster (KEYTIMEOUT is in hundredths of a second)
 export KEYTIMEOUT=1
 # incremental search in insert mode
