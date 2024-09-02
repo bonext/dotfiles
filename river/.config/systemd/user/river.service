@@ -7,11 +7,20 @@ After=graphical-session-pre.target
 BindsTo=graphical-session.target
 Before=graphical-session.target
 
-# Wants=xdg-desktop-autostart.target
-# Before=xdg-desktop-autostart.target
+Wants=xdg-desktop-autostart.target
+Before=xdg-desktop-autostart.target
 
+# auto output configurator
 Wants=kanshi.service
 Before=kanshi.service
+
+# auto light-dark mode toggle
+Wants=darkman.service
+Before=darkman.service
+
+# brightness controller
+Wants=wlr-brightness.service
+Before=wlr-brightness.service
 
 [Service]
 Slice=session.slice

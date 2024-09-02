@@ -27,3 +27,6 @@ systemctl --user --wait start river.service
 
 # Force stop of graphical-session.target.
 systemctl --user start --job-mode=replace-irreversibly river-shutdown.target
+
+# unset WAYLAND_DISPLAY or else can't logout and login back
+systemctl --user unset-environment WAYLAND_DISPLAY
