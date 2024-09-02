@@ -21,7 +21,7 @@ fi
 systemctl --user reset-failed
 
 # Import the login manager environment.
-systemctl --user import-environment
+systemctl --user import-environment WAYLAND_DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
 
 # DBus activation environment is independent from systemd. While most of
 # dbus-activated services are already using `SystemdService` directive, some
