@@ -10,7 +10,11 @@
 
 # Note: the "Super" modifier is also known as Logo, GUI, Windows, Mod4, etc.
 
-# Super+Shift+Return to start an instance of foot (https://codeberg.org/dnkl/foot)
+# layout toggle
+# also remap caps to ctrl
+riverctl keyboard-layout -options "grp:win_space_toggle,compose:ralt,ctrl:nocaps" us,ru
+
+# Super+Shift+Return to start an instance of kitty
 riverctl map normal Super+Shift Return spawn kitty
 
 # selector
@@ -141,8 +145,8 @@ do
     riverctl map $mode None XF86AudioNext  spawn 'playerctl next'
 
     # Control screen backlight brightness with brightnessctl (https://github.com/Hummer12007/brightnessctl)
-    riverctl map $mode None XF86MonBrightnessUp   spawn 'brightnessctl set +5%'
-    riverctl map $mode None XF86MonBrightnessDown spawn 'brightnessctl set 5%-'
+    riverctl map $mode None XF86MonBrightnessUp   spawn 'gdbus call -e -d de.mherzberg -o /de/mherzberg/wlrbrightness -m de.mherzberg.wlrbrightness.increase 0.1'
+    riverctl map $mode None XF86MonBrightnessDown spawn 'gdbus call -e -d de.mherzberg -o /de/mherzberg/wlrbrightness -m de.mherzberg.wlrbrightness.decrease 0.1'
 done
 
 # Set background and border color
@@ -164,6 +168,8 @@ riverctl rule-add -app-id "bar" csd
 riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
 
-riverctl keyboard-layout -options "grp:win_space_toggle,compose:ralt,ctrl:nocaps" us,ru
+# export variables and notify systemd we're ready
+systemctl --user import-environment WAYLAND_DISPLAY \
+    && dbus-update-activation-environment WAYLAND_DISPLAY
 
 systemd-notify --ready
