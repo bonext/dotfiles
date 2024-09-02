@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=River (systemd)
+Comment=A dynamic tiling Wayland compositor
+Exec=river-session
+Type=Application
