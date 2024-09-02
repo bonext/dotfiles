@@ -165,3 +165,5 @@ riverctl default-layout rivertile
 rivertile -view-padding 6 -outer-padding 6 &
 
 riverctl keyboard-layout -options "grp:win_space_toggle,compose:ralt,ctrl:nocaps" us,ru
+
+systemd-notify --ready
