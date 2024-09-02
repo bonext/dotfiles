@@ -10,5 +10,6 @@ Before=xdg-desktop-autostart.target
 
 [Service]
 Slice=session.slice
-Type=exec
+Type=notify
+NotifyAccess=all
 ExecStart=/usr/bin/river
