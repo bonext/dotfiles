@@ -1,0 +1,11 @@
+[Unit]
+Description=kanshi
+
+Requires=graphical-session.target
+Before=graphical-session.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/kanshi
+# Restart=on-failure
+ExecReload=kill -SIGHUP $MAINPID
