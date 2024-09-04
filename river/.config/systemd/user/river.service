@@ -22,6 +22,10 @@ Before=darkman.service
 Wants=wlr-brightness.service
 Before=wlr-brightness.service
 
+# waybar
+Wants=waybar.service
+Before=waybar.service
+
 [Service]
 Slice=session.slice
 Type=notify
