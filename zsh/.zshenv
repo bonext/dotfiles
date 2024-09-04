@@ -19,9 +19,9 @@ if [[ -f $CARGO_ENV ]]; then
     source $CARGO_ENV
 fi
 
-export VISUAL="emacsclient -c"
+export VISUAL='emacsclient --alternate-editor='""' -c'
 
-export SUDO_EDITOR="emacsclient -c"
+export SUDO_EDITOR='emacsclient --alternate-editor='""' -c'
 
 export GPG_TTY=$(tty)
 
