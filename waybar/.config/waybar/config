@@ -19,18 +19,16 @@
     "height": 30,
 
     "modules-left": [
-        "sway/workspaces",
-        "sway/mode"
+        "river/tags"
     ],
     "modules-center": [
-        "sway/window"
     ],
     "modules-right": [
         "network",
         "memory",
         "cpu",
         "temperature",
-        "custom/keyboard-layout",
+//      "custom/keyboard-layout",
         "battery",
         "tray",
         "clock#date",
@@ -41,6 +39,12 @@
     // -------------------------------------------------------------------------
     // Modules
     // -------------------------------------------------------------------------
+    "river/tags": {
+        "num-tags": 5,
+        "tag-labels": [
+            "1", "2", "3", "4", "5"
+        ],
+    },
 
     "battery": {
         "interval": 10,
@@ -83,15 +87,15 @@
         }
     },
 
-    "custom/keyboard-layout": {
-      "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
-      // Interval set only as a fallback, as the value is updated by signal
-      "interval": 30,
-      "format": "  {}", // Icon: keyboard
-      // Signal sent by Sway key binding (~/.config/sway/key-bindings)
-      "signal": 1, // SIGHUP
-      "tooltip": false
-    },
+//  "custom/keyboard-layout": {
+//    "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
+//    // Interval set only as a fallback, as the value is updated by signal
+//    "interval": 30,
+//    "format": "  {}", // Icon: keyboard
+//    // Signal sent by Sway key binding (~/.config/sway/key-bindings)
+//    "signal": 1, // SIGHUP
+//    "tooltip": false
+//  },
 
     "memory": {
         "interval": 5,
@@ -109,49 +113,6 @@
         "format-disconnected": "⚠  Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}"
     },
-
-    "sway/mode": {
-        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
-        "tooltip": false
-    },
-
-    "sway/window": {
-        "format": "{}",
-        "max-length": 120
-    },
-
-    "sway/workspaces": {
-        "all-outputs": false,
-        "disable-scroll": true,
-        "format": "{icon} {name}",
-        "format-icons": {
-            "1:www": "龜", // Icon: firefox-browser
-            "2:mail": "", // Icon: mail
-            "3:editor": "", // Icon: code
-            "4:terminals": "", // Icon: terminal
-            "5:portal": "", // Icon: terminal
-            "urgent": "",
-            "focused": "",
-            "default": ""
-        }
-    },
-
-    //"pulseaudio": {
-    //    //"scroll-step": 1,
-    //    "format": "{icon}  {volume}%",
-    //    "format-bluetooth": "{icon}  {volume}%",
-    //    "format-muted": "",
-    //    "format-icons": {
-    //        "headphones": "",
-    //        "handsfree": "",
-    //        "headset": "",
-    //        "phone": "",
-    //        "portable": "",
-    //        "car": "",
-    //        "default": ["", ""]
-    //    },
-    //    "on-click": "pavucontrol"
-    //},
 
     "temperature": {
       "critical-threshold": 80,
