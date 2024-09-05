@@ -1,4 +1,0 @@
-! DP-3 native DPI: 164 is a tad too large
-! eDP-1 = 0.8 * DP-3
-! DP-3 >= 120
-Xft.dpi: 120
