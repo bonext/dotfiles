@@ -1,4 +1,29 @@
-output eDP-1 scale 2
+output eDP-1 {
+  alias $laptop
+  enable
+}
+
+output "Iiyama North America PL2792UH 1166304701730" {
+  alias $home
+  enable
+}
+
+profile dual {
+  output $home {
+    enable
+    scale 2
+    position 0,0
+  }
+  output $laptop {
+    enable
+    scale 2
+    position 0,1080
+  }
+}
+
 profile nomad {
-  output eDP-1
+  output $laptop {
+    enable
+    scale 2
+  }
 }
