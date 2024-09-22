@@ -1,0 +1,9 @@
+[Unit]
+Description=swaybg
+
+Requires=graphical-session.target
+Before=graphical-session.target
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/swaybg -m fill -i /home/bonext/Pictures/wallpapers/51338568546_9ef56ec2e8_o.jpg

@@ -26,6 +26,10 @@ Before=wlr-brightness.service
 Wants=waybar.service
 Before=waybar.service
 
+# swaybg
+Wants=swaybg.service
+Before=swaybg.service
+
 [Service]
 Slice=session.slice
 Type=notify
