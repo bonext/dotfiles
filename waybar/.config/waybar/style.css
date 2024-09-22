@@ -50,7 +50,7 @@
 #waybar {
     background: #323232;
     color: white;
-    font-family: IBM Plex Sans, sans-serif;
+    font-family: IBM Plex Sans, BlexMono Nerd Font, all-the-icons, sans-serif;
     font-size: 13px;
 }
 
