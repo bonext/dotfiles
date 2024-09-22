@@ -91,3 +91,6 @@ vterm_prompt_end() {
 }
 setopt PROMPT_SUBST
 PROMPT=$PROMPT'%{$(vterm_prompt_end)%}'
+#
+autoload -U add-zsh-hook
+add-zsh-hook -Uz chpwd(){ print -Pn "\e]2;%2~\a" }
