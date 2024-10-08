@@ -1,0 +1,3 @@
+# per docs this is bash
+# TODO: check for presence first
+source $HOME/src/3rdparty/nix-direnv/direnvrc
