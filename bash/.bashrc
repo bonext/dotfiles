@@ -39,4 +39,3 @@ PS1=$PS1'\[$(vterm_prompt_end)\]'
 
 # direnv integration
 eval "$(direnv hook bash)"
-
