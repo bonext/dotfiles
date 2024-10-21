@@ -1,3 +1,15 @@
 window {
-    background-color: black;
+    background-color: #282828;
+}
+
+label {
+    color: #a89984;
+}
+
+entry {
+    border-color: #282828;
+    background-color: #928374;
+}
+
+button {
 }
