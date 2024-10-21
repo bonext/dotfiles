@@ -48,8 +48,8 @@
 
 /* The whole bar */
 #waybar {
-    background: #323232;
-    color: white;
+    background: #282828;
+    color: #ebdbb2;
     font-family: IBM Plex Sans, BlexMono Nerd Font, all-the-icons, sans-serif;
     font-size: 13px;
 }
@@ -81,11 +81,11 @@
 }
 
 #battery.warning {
-    color: orange;
+    color: #d79921;
 }
 
 #battery.critical {
-    color: red;
+    color: #cc241d;
 }
 
 #battery.warning.discharging {
@@ -107,11 +107,11 @@
 }
 
 #cpu.warning {
-    color: orange;
+    color: #d79921;
 }
 
 #cpu.critical {
-    color: red;
+    color: #cc241d;
 }
 
 #memory {
@@ -121,20 +121,20 @@
 }
 
 #memory.warning {
-    color: orange;
+    color: #d79921;
 }
 
 #memory.critical {
-    color: red;
+    color: #cc241d;
     animation-name: blink-critical;
     animation-duration: 2s;
 }
 
 #mode {
-    background: #64727D;
-    border-top: 2px solid white;
+    background: #282828;
+    /* border-top: 2px solid #b16286; */ 
     /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
+    /* padding-bottom: 2px; */
 }
 
 #network {
@@ -179,17 +179,17 @@
     padding-bottom: 2px;
     padding-left: 10px;
     padding-right: 10px;
-    color: #888888;
+    color: #ebdbb2;
 }
 
 #tags button.occupied {
-    border-color: #4c7899;
+    border-color: #458588;
 }
 
 #tags button.focused {
-    border-color: #4c7899;
-    color: white;
-    background-color: #285577;
+    border-color: #458588;
+    color: #ebdbb2;
+    background-color: #3c3836;
 }
 
 #tags button.urgent {

@@ -19,7 +19,8 @@
     "height": 30,
 
     "modules-left": [
-        "river/tags"
+        "river/tags",
+        "river/mode"
     ],
     "modules-center": [
     ],
@@ -44,6 +45,10 @@
         "tag-labels": [
             "1", "2", "3", "4", "5"
         ],
+    },
+
+    "river/mode": {
+        "format": "mode: {}"
     },
 
     "battery": {
