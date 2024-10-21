@@ -129,13 +129,17 @@ riverctl map normal Super F11 enter-mode passthrough
 # Super+F11 to return to normal mode
 riverctl map passthrough Super F11 enter-mode normal
 
+# Declare screenshot mode
+riverctl declare-mode screenshot
+riverctl map normal Super+Control P enter-mode screenshot
+riverctl map screenshot None Escape enter-mode normal
+riverctl map screenshot None A spawn 'grim - | wl-copy && riverctl enter-mode normal'
+riverctl map screenshot None S spawn 'grim -g "`slurp`" - | wl-copy && riverctl enter-mode normal'
+
 # Various media key mapping examples for both normal and locked mode which do
 # not have a modifier
 for mode in normal locked
 do
-    # Eject the optical drive (well if you still have one that is)
-    riverctl map $mode None XF86Eject spawn 'eject -T'
-
     # Control pulse audio volume with pamixer (https://github.com/cdemoulins/pamixer)
     riverctl map $mode None XF86AudioRaiseVolume  spawn 'pamixer -i 5'
     riverctl map $mode None XF86AudioLowerVolume  spawn 'pamixer -d 5'
