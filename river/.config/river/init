@@ -20,6 +20,9 @@ riverctl map normal Super+Shift Return spawn kitty
 # selector
 riverctl map normal Super D spawn fuzzel
 
+# screen lock
+riverctl map normal Super+Control Q spawn gtklock
+
 # Super+Q to close the focused view
 riverctl map normal Super Q close
 
