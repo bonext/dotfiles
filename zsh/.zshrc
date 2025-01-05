@@ -67,3 +67,9 @@ if type helm &>/dev/null; then
 fi
 
 autoload -U +X bashcompinit && bashcompinit
+
+# helix
+if [[ -d ~/src/3rdparty/helix/runtime ]]; then
+    export HELIX_RUNTIME=~/src/3rdparty/helix/runtime
+fi 
+

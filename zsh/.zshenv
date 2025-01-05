@@ -12,12 +12,19 @@ if [[ -d ~/.local/bin/platform-tools ]]; then
     path=(~/.local/bin/platform-tools $path)
 fi
 
-export PATH
-
+# cargo
 CARGO_ENV="$HOME/.cargo/env"
 if [[ -f $CARGO_ENV ]]; then
     source $CARGO_ENV
 fi
+
+CARGO_BIN="$HOME/.cargo/bin"
+if [[ -d $CARGO_BIN ]]; then
+    path=($CARGO_BIN $path)
+fi
+
+export PATH
+
 
 export VISUAL='emacsclient --alternate-editor='""' -c'
 
