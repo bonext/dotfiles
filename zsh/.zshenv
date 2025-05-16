@@ -36,3 +36,5 @@ export GPG_TTY=$(tty)
 if [[ -f ~/.local-secrets ]]; then
     source ~/.local-secrets
 fi
+
+if [ -e /home/bonext/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bonext/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
