@@ -1,14 +1,15 @@
 window {
-    background-color: #282828;
+    background-color: #11121d;
 }
 
 label {
-    color: #a89984;
+    color: #a0a8cd;
 }
 
 entry {
-    border-color: #282828;
-    background-color: #928374;
+    border-color: #11121d;
+    background-color: #212234;
+    color: #a0a8cd;
 }
 
 button {

@@ -1,3 +1,8 @@
+#lang pollen
+◊;https://github.com/tinted-theming/base16-emacs/blob/main/build/base16-tokyodark-theme.el
+◊;https://github.com/chriskempson/base16/blob/main/styling.md
+◊(define (c rrggbb) (format "#~a" rrggbb))
+
 /* =============================================================================
  *
  * Waybar configuration
@@ -48,8 +53,8 @@
 
 /* The whole bar */
 #waybar {
-    background: #212234;
-    color: #a0a8cd;
+    background: ◊(c base01);
+    color: ◊(c base05);
     font-family: IBM Plex Sans, BlexMono Nerd Font, all-the-icons, sans-serif;
     font-size: 13px;
 }
@@ -131,10 +136,10 @@
 }
 
 #mode {
-    /* border-top: 2px solid #b16286; */
+    /* border-top: 2px solid #b16286; */ 
     /* To compensate for the top border and still have vertical centering */
     /* padding-bottom: 2px; */
-    background: #212234;
+    background: ◊(c base01);
 }
 
 #network {
@@ -179,16 +184,16 @@
     padding-bottom: 2px;
     padding-left: 10px;
     padding-right: 10px;
-    color: #a0a8cd;
+    color: ◊(c base05);
 }
 
 #tags button.occupied {
-    border-color: #a0a8cd;
+    border-color: ◊(c base05);
 }
 
 #tags button.focused {
-    border-color: #a0a8cd;
-    background-color: #4a5057;
+    border-color: ◊(c base05);
+    background-color: ◊(c base04);
 }
 
 #tags button.urgent {

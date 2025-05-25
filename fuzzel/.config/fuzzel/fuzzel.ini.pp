@@ -1,3 +1,6 @@
+#lang pollen
+◊(define (c rrggbb) (format "~aff" rrggbb))
+
 # output=<not set>
 font=IBM Plex Sans
 # dpi-aware=auto
@@ -44,17 +47,17 @@ font=IBM Plex Sans
 # match-workers=<number of logical CPUs>
 
 [colors]
-background=212234ff
-text=a0a8cdff
-prompt=a485ddff
+background=◊(c base01)
+text=◊(c base05)
+prompt=◊(c base0E)
 placeholder=aaaaaaff
-input=a485ddff
-match=ee6d85ff
-selection=212234ff
-selection-text=f6955bff
-selection-match=ee6d85ff
+input=◊(c base0E)
+match=◊(c base08)
+selection=◊(c base02)
+selection-text=◊(c base09)
+selection-match=◊(c base08)
 counter=aaaaaaff
-border=bcc2dcff
+border=◊(c base07)
 
 [border]
 # width=1

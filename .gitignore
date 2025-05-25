@@ -13,4 +13,10 @@
 *.bak
 
 # systemd dependencies
-systemd/.config/systemd/user/*.wants/
+systemd/.config/systemd/user/*.wants/compiled/
+
+# pollen
+compiled/
+
+# manual backups
+*.backup
