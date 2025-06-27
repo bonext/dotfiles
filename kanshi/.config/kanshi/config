@@ -21,6 +21,17 @@ profile dual {
   }
 }
 
+profile home {
+  output $home {
+    enable
+    scale 2
+    position 0,0
+  }
+  output $laptop {
+    disable
+  }
+}
+
 profile nomad {
   output $laptop {
     enable
