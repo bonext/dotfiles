@@ -1,8 +1,7 @@
 [Unit]
 Description=kanshi
-
 Requires=graphical-session.target
-Before=graphical-session.target
+After=graphical-session.target
 
 [Service]
 Type=exec

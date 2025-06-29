@@ -104,17 +104,13 @@
 }
 
 #clock {
-    font-weight: bold;
 }
 
 #cpu {
-  /* No styles */
 }
-
 #cpu.warning {
     color: #d79921;
 }
-
 #cpu.critical {
     color: #cc241d;
 }
@@ -175,7 +171,7 @@
 }
 
 #window {
-    font-weight: bold;
+    font-weight: normal;
 }
 
 #tags button {
@@ -199,4 +195,27 @@
 #tags button.urgent {
     border-color: #c9545d;
     color: #c9545d;
+}
+
+#language {
+    font-family: IBM Plex Mono;
+    font-weight: bold;
+}
+
+#workspaces button {
+    border-top: 2px solid transparent;
+    /* To compensate for the top border and still have vertical centering */
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: ◊(c base05);
+}
+
+#workspaces button.occupied {
+    border-color: ◊(c base05);
+}
+
+#workspaces button.focused {
+    border-color: ◊(c base05);
+    background-color: ◊(c base04);
 }
