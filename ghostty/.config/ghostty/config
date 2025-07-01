@@ -2,3 +2,6 @@ font-family = "Cascadia Code NF"
 font-size = 10
 window-decoration = "none"
 theme = tokyonight_night
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
