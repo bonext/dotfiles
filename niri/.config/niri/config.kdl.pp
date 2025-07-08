@@ -319,12 +319,17 @@ match app-id=r#"^emacs$"#
 open-maximized true
 }
 
-// maximize emacs on open
+// maximize thunderbird on open
 window-rule{
 match app-id=r#"^thunderbird$"#
 open-maximized true
 }
 
+// maximize telegram on open
+window-rule{
+match app-id=r#"^org.telegram.desktop"#
+open-maximized true
+}
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
