@@ -8,10 +8,6 @@ if [[ -d ~/.local/bin ]]; then
     path=(~/.local/bin $path)
 fi
 
-if [[ -d ~/.local/bin/platform-tools ]]; then
-    path=(~/.local/bin/platform-tools $path)
-fi
-
 # cargo
 CARGO_ENV="$HOME/.cargo/env"
 if [[ -f $CARGO_ENV ]]; then
@@ -25,16 +21,6 @@ fi
 
 export PATH
 
-
-export VISUAL='emacsclient --alternate-editor='""' -c'
-
-export SUDO_EDITOR='emacsclient --alternate-editor='""' -c'
-
 export GPG_TTY=$(tty)
-
-# secret stuff
-if [[ -f ~/.local-secrets ]]; then
-    source ~/.local-secrets
-fi
 
 if [ -e /home/bonext/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bonext/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

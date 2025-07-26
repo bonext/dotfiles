@@ -9,4 +9,8 @@ if status is-interactive
     
     # abbr gets expanded to a full command before execution
     abbr -a irc tmux new-session -A -s irc weechat
+
+    # override (potentially) inherited $VISUAL and $SUDO_EDITOR
+    set --global --export VISUAL nvim
+    set --global --export SUDO_EDITOR nvim
 end

@@ -57,19 +57,4 @@ then
         export PROMPT="[vifm] $PROMPT"
 fi
 
-# kubectl completion
-if type kubectl &>/dev/null; then
-    source <(kubectl completion zsh)
-fi
-
-if type helm &>/dev/null; then
-    source <(helm completion zsh)
-fi
-
 autoload -U +X bashcompinit && bashcompinit
-
-# helix
-if [[ -d ~/src/3rdparty/helix/runtime ]]; then
-    export HELIX_RUNTIME=~/src/3rdparty/helix/runtime
-fi 
-
