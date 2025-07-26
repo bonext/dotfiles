@@ -374,8 +374,8 @@ binds {
         // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
 
         // wlr-brightness control
-        XF86MonBrightnessUp allow-when-locked=true {spawn "pkexec" "brillo" "-A" "10" "-s" "amdgpu_bl1" "-l"; }
-        XF86MonBrightnessDown allow-when-locked=true {spawn "pkexec" "brillo" "-U" "10" "-s" "amdgpu_bl1" "-l"; }
+        XF86MonBrightnessUp allow-when-locked=true {spawn "brillo" "-A" "1" "-s" "amdgpu_bl1" "-l"; }
+        XF86MonBrightnessDown allow-when-locked=true {spawn "brillo" "-U" "1" "-s" "amdgpu_bl1" "-l"; }
 
         // Example volume keys mappings for PipeWire & WirePlumber.
         // The allow-when-locked=true property makes them work even when the session is locked.
